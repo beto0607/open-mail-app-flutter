@@ -37,6 +37,19 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+    kotlinOptions {
+        jvmTarget = '17' // or '1.8' if you want to use 1.8 for everything.
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17 // or JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_17 // or JavaVersion.VERSION_1_8
+    }
+
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(17)) // or 8
+        }
+    }
 }
 
 dependencies {
